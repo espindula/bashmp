@@ -1,0 +1,24 @@
+cmd=[options]; --msgid-bugs-address / --msgid-bugs-address jafesp@gmail.com
+cmd=[options]; --copyright-holder / --copyright-holder Jamenson Ferreira Espindula de Almeida Melo
+cmd=[options]; --package-name / --package-name GNU Bash
+cmd=[options]; --package-version / --package-version 4.3
+cmd=[options]; --keep / --keep 0
+cmd=[po4a_paths]; man/po/pt_BR.pot / man/po/pt_BR.pot pt_BR:man/po/pt_BR.po
+cmd=[type: man]; man/bash.1 / man/bash.1 $lang:man/translated/bash.1 opt:-o groff_code=verbatim opt:-o unknown_macros=translate_each opt:-o translate_each=}1 opt:-o translate_each=FN
+Options for man/bash.1 while generating pot: --msgid-bugs-address jafesp@gmail.com --copyright-holder 'Jamenson Ferreira Espindula de Almeida Melo' --package-name GNU Bash --package-version 4.3 --keep 0 -o groff_code=verbatim -o unknown_macros=translate_each -o translate_each=}1 -o translate_each=FN
+Updating man/po/pt_BR.pot:po4a::transtractor::process: Read document /home/jamenson/repos/espindula/bashmp/po4a/man/bash.1
+po4a::transtractor::process: Call parse()
+po4a::man: This page defines a new macro '}1' with '.de', but you did not specify the expected po4a behavior when '}1' is used. You will get an error if this macro is actually used in your page.
+Add your macro to one of the 'untranslated', 'noarg', 'translate_joined', 'translate_each', 'no_wrap' or 'inline' parameters to avoid issues.
+For example, passing '-o untranslated=}1' to po4a will ensure that the defined macro remains hidden from translators.
+Please refer to the manpage of Locale::Po4a::Man for more info on these parameters.
+
+man/bash.1:501: (po4a::man)
+Font modifiers followed by a command may disturb po4a.  You should either remove the font modifier '.B', or integrate a \f font modifier in the following command ('.if n ! case  coproc  do done elif else esac fi for function if in select then until while { } time [[ ]]'), but continuing anyway.
+man/bash.1:3446: (po4a::man)
+Font modifiers followed by a command may disturb po4a.  You should either remove the font modifier '.B', or integrate a \f font modifier in the following command ('.if n alnum alpha ascii blank cntrl digit graph lower print punct space upper word xdigit'), but continuing anyway.
+po4a::transtractor::process: Done parse()
+ (2065 entries)
+msgmerge "/home/jamenson/repos/espindula/bashmp/po4a/man/po/pt_BR.po" "/home/jamenson/repos/espindula/bashmp/po4a/man/po/pt_BR.pot" --previous  --backup=none --update
+Updating man/po/pt_BR.po: 0 translated messages, 2065 untranslated messages.
+Reading PO file /home/jamenson/repos/espindula/bashmp/po4a/man/po/pt_BR.po for language pt_BR: /home/jamenson/repos/espindula/bashmp/po4a/man/po/pt_BR.po: 0 translated messages, 2065 untranslated messages.
