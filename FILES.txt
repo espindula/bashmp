@@ -1,1 +1,4 @@
-bashmp-pt_BR.texi:		Manual Page of Bash, version 4.3, translated into Brazilian Portuguese (GNU Texinfo source file)
+RENDER.txt			How to render the Portable Object (PO) file.
+po4a/man/po/pt_BR.po		Portable Object (PO) file containing the strings translated into Brazilian Portuguese.
+po4a/man/po/pt_BR.pot		Portable Object Template (POT) file containing the strings intended to be translated into some language.
+po4a/man/bash.1			Working copy of the Manual Page of Bash as released by upstream.
