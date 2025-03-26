@@ -1,0 +1,1 @@
+( LC_ALL=C po4a --no-update po4a.conf 2>&1 | tee po4a.log.txt && exit "${PIPESTATUS}" )
