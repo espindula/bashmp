@@ -1,19 +1,21 @@
-# Projeto de Tradução da Página de Manual do Bash, versão 4.3, para o idioma português do Brasil.
+# Projeto de Tradução da Página de Manual do GNU Bash, versão 4.3, para o idioma português do Brasil.
 
-Translation project of the Man Page of Bash, version 4.3, into Brazilian Portuguese.
+Translation project of the Man Page of GNU Bash, version 4.3, into Brazilian Portuguese.
 
 
 git clone https://github.com/espindula/bashmp.git
 
+Chave pix para doações: jafesp@gmail.com
+
 
 Direitos autorais (Copyright) da versão mudada traduzida para o idioma português escrito e falado no Brasil: (c) 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Jamenson Ferreira Espindula de Almeida Melo.
 
-  Este trabalho de tradução da Página de Manual do Bash é 
+  Este trabalho de tradução da Página de Manual do GNU Bash é 
   classificado pela Free Software Foundation como sendo uma 
   "versão modificada" do mencionado manual.   Em assim sendo, na 
   qualidade de tradutor, produtor da "versão modificada" e titular 
   dos direitos autorais sobre a versão traduzida para o idioma 
-  português da Página de Manual do Bash, versão 4.3, concede-se a 
+  português da Página de Manual do GNU Bash, versão 4.3, concede-se a 
   seguinte permissão:
 
   Permissão é concedida para copiar, distribuir e (ou) modificar este 
@@ -26,7 +28,7 @@ Direitos autorais (Copyright) da versão mudada traduzida para o idioma portugu�
 # Atenção: todos os documentos aqui publicados são distribuídos sem qualquer garantia, implícita e (ou) explícita.
   
   Permission is granted to copy, distribute and (or) modify this Manual 
-  Page of Bash, version 4.3, translated into Brazilian Portuguese, under 
+  Page of GNU Bash, version 4.3, translated into Brazilian Portuguese, under 
   the terms of the GNU Free Documentation License, Version 1.3 or any 
   later version published by the Free Software Foundation; with no 
   Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.   A 
