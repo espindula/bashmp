@@ -23,56 +23,56 @@ msgstr ""
 #: man/bash.1:13
 #, no-wrap
 msgid "BASH"
-msgstr ""
+msgstr "BASH"
 
 #. type: TH
 #: man/bash.1:13
 #, no-wrap
 msgid "2014 January 6"
-msgstr ""
+msgstr "06 de janeiro de 2014"
 
 #. type: TH
 #: man/bash.1:13
 #, no-wrap
 msgid "GNU Bash 4.3"
-msgstr ""
+msgstr "GNU Bash 4.3"
 
 #
-#.  File Name macro.  This used to be `.PN', for Path Name,
-#.  but Sun doesn't seem to like that very much.
+#.  Macro de Nome de Arquivo.  Isso costumava ser `.PN', para Nome de 
+#.  Caminho, mas Sun parece não gostar muito disso.
 #. type: SH
 #: man/bash.1:46
 #, no-wrap
 msgid "NAME"
-msgstr ""
+msgstr "NOME"
 
 #. type: Plain text
 #: man/bash.1:48
 msgid "bash - GNU Bourne-Again SHell"
-msgstr ""
+msgstr "bash - GNU Bourne-Again SHell"
 
 #. type: SH
 #: man/bash.1:48
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr ""
+msgstr "SINOPSE"
 
 #. type: Plain text
 #: man/bash.1:52
 msgid "B<bash> [options] [command_string | file]"
-msgstr ""
+msgstr "B<bash> [opções] [string_comando | arquivo]"
 
 #. type: SH
 #: man/bash.1:52
 #, no-wrap
 msgid "COPYRIGHT"
-msgstr ""
+msgstr "DIREITOS AUTORAIS"
 
 #. type: SH
 #: man/bash.1:55
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIÇÃO"
 
 #. type: Plain text
 #: man/bash.1:62
@@ -82,6 +82,10 @@ msgid ""
 "incorporates useful features from the I<Korn> and I<C> shells (B<ksh> and "
 "B<csh>)."
 msgstr ""
+"B<Bash> é um interpretador de linguagem de comandos compatível com B<sh> "
+"que executa comandos lidos a partir da entrada padrão ou a partir de um "
+"arquivo.  B<Bash> também incorpora recursos úteis originários dos shells "
+"I<Korn> e I<C> (B<ksh> e B<csh>)."
 
 #. type: Plain text
 #: man/bash.1:69
@@ -90,12 +94,16 @@ msgid ""
 "Utilities portion of the IEEE POSIX specification (IEEE Standard 1003.1).  "
 "B<Bash> can be configured to be POSIX-conformant by default."
 msgstr ""
+"B<Bash> está destinado a ser uma implementação conformante da parte do "
+"Shell e dos Utilitários da especificação IEEE POSIX (IEEE Standard "
+"1003.1).  B<Bash> pode ser configurado para ser conformante com POSIX por "
+"padrão."
 
 #. type: SH
 #: man/bash.1:69
 #, no-wrap
 msgid "OPTIONS"
-msgstr ""
+msgstr "OPÇÕES"
 
 #. type: Plain text
 #: man/bash.1:75
@@ -105,13 +113,17 @@ msgid ""
 "invoked.  In addition, B<bash> interprets the following options when it is "
 "invoked:"
 msgstr ""
+"Todas as opções de shell de único carácter documentadas na descrição "
+"do comando interno B<set> podem ser usadas como opções quando o shell for "
+"invocado.  Além disso, B<bash> interpreta as seguintes opções quando é "
+"invocado:"
 
 #. type: TP
 #: man/bash.1:77 man/bash.1:7550 man/bash.1:8127 man/bash.1:8365
 #: man/bash.1:9932
 #, no-wrap
 msgid "B<-c>"
-msgstr ""
+msgstr "B<-c>"
 
 #. type: Plain text
 #: man/bash.1:87
@@ -121,24 +133,28 @@ msgid ""
 "I<command_string>, they are assigned to the positional parameters, starting "
 "with B<$0>."
 msgstr ""
+"Se a opção B<-c> estiver presente, então os comandos serão lidos a "
+"partir do primeiro argumento não opção I<string_comando>.  Se existirem "
+"argumentos depois de I<string_comando>, eles serão atribuídos para os "
+"parâmetros posicionais, começando com B<$0>."
 
 #. type: TP
 #: man/bash.1:87 man/bash.1:7469 man/bash.1:9944
 #, no-wrap
 msgid "B<-i>"
-msgstr ""
+msgstr "B<-i>"
 
 #. type: Plain text
 #: man/bash.1:93
 msgid "If the B<-i> option is present, the shell is I<interactive>."
-msgstr ""
+msgstr "Se a opção B<-i> estiver presente, o shell é I<interativo>."
 
 #. type: TP
 #: man/bash.1:93 man/bash.1:6932 man/bash.1:7475 man/bash.1:7553
 #: man/bash.1:8191 man/bash.1:9947
 #, no-wrap
 msgid "B<-l>"
-msgstr ""
+msgstr "B<-l>"
 
 #. type: Plain text
 #: man/bash.1:101
@@ -146,13 +162,15 @@ msgid ""
 "Make B<bash> act as if it had been invoked as a login shell (see E<.SM> "
 "B<INVOCATION> below)."
 msgstr ""
+"Faz B<bash> atuar como se ele tivesse sido invocado como um shell de login "
+"(veja-se E<.SM> B<INVOCAÇÃO> abaixo)."
 
 #. type: TP
 #: man/bash.1:101 man/bash.1:7489 man/bash.1:8143 man/bash.1:8203
 #: man/bash.1:8630 man/bash.1:9963
 #, no-wrap
 msgid "B<-r>"
-msgstr ""
+msgstr "B<-r>"
 
 #. type: Plain text
 #: man/bash.1:111
@@ -160,6 +178,8 @@ msgid ""
 "If the B<-r> option is present, the shell becomes I<restricted> (see E<.SM> "
 "B<RESTRICTED SHELL> below)."
 msgstr ""
+"Se a opção B<-r> estiver presente, o shell se torna I<restrito> (veja-se "
+"E<.SM> B<SHELL RESTRITO> abaixo)."
 
 #. type: TP
 #: man/bash.1:111 man/bash.1:6942 man/bash.1:8081 man/bash.1:8157
@@ -167,7 +187,7 @@ msgstr ""
 #: man/bash.1:9966
 #, no-wrap
 msgid "B<-s>"
-msgstr ""
+msgstr "B<-s>"
 
 #. type: Plain text
 #: man/bash.1:119
@@ -177,12 +197,16 @@ msgid ""
 "allows the positional parameters to be set when invoking an interactive "
 "shell."
 msgstr ""
+"Se a opção B<-s> estiver presente ou se nenhum argumento permanecer depois "
+"do processamento de opções, então os comandos serão lidos a partir da "
+"entrada padrão.  Essa opção permite que os parâmetros posicionais sejam "
+"configurados ao se invocar um shell interativo."
 
 #. type: TP
 #: man/bash.1:119
 #, no-wrap
 msgid "B<-D>"
-msgstr ""
+msgstr "B<-D>"
 
 #. type: Plain text
 #: man/bash.1:127
@@ -192,12 +216,16 @@ msgid ""
 "translation when the current locale is not B<C> or B<POSIX>.  This implies "
 "the B<-n> option; no commands will be executed."
 msgstr ""
+"Uma lista de todas as strings de aspas duplas precedida por B<$> é impressa "
+"na saída padrão.  Essas são as strings que estão sujeitas à tradução "
+"da linguagem quando a localidade atual não for B<C> ou B<POSIX>.  Isso "
+"implica a opção B<-n>; nenhum comando será executado."
 
 #. type: TP
 #: man/bash.1:127
 #, no-wrap
 msgid "B<[-+]O [>I<shopt_option>B<]>"
-msgstr ""
+msgstr "B<[-+]O [>I<opção_shopt>B<]>"
 
 #. type: Plain text
 #: man/bash.1:140
@@ -210,12 +238,19 @@ msgid ""
 "option is B<+O>, the output is displayed in a format that may be reused as "
 "input."
 msgstr ""
+"I<opção_shopt> é uma das opções de shell aceitas pelo interno B<shopt> "
+"(veja-se E<.SM> B<COMANDOS INTERNOS DO SHELL> abaixo).  Se I<opção_shopt> "
+"estiver presente, B<-O> configura o valor dessa opção; B<+O> o "
+"desconfigura.  Se I<opção_shopt> não for fornecido, os nomes e valores "
+"das opções de shell aceitos por B<shopt> serão impressos na saída "
+"padrão.  Se a opção de invocação for B<+O>, a saída gerada será "
+"exibida em um formato que pode ser reusado como entrada."
 
 #. type: TP
 #: man/bash.1:140 man/bash.1:9086
 #, no-wrap
 msgid "B<-->"
-msgstr ""
+msgstr "B<-->"
 
 #. type: Plain text
 #: man/bash.1:150
@@ -224,6 +259,9 @@ msgid ""
 "Any arguments after the B<--> are treated as filenames and arguments.  An "
 "argument of B<-> is equivalent to B<-->."
 msgstr ""
+"Um B<--> sinaliza o fim das opções e desabilita o processamento adicional "
+"de opções.  Quaisquer argumentos depois do B<--> são tratados como nomes "
+"de arquivos e argumentos.  Um argumento de B<-> é equivalente a B<-->."
 
 #. type: Plain text
 #: man/bash.1:156
