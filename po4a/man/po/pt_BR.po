@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: GNU 4.3\n"
 "Report-Msgid-Bugs-To: jafesp@gmail.com\n"
 "POT-Creation-Date: 2025-03-26 03:39-0300\n"
-"PO-Revision-Date: 2025-03-26 03:39-0300\n"
+"PO-Revision-Date: 2025-03-27 08:39-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
@@ -270,12 +270,15 @@ msgid ""
 "must appear on the command line before the single-character options to be "
 "recognized."
 msgstr ""
+"B<Bash> também interpreta várias opções de vários caracteres.  Essas "
+"opções precisam aparecer na linha de comando antes que as opções de "
+"único caractere sejam reconhecidas."
 
 #. type: TP
 #: man/bash.1:158
 #, no-wrap
 msgid "B<--debugger>"
-msgstr ""
+msgstr "B<--debugger>"
 
 #. type: Plain text
 #: man/bash.1:167
@@ -284,12 +287,15 @@ msgid ""
 "Turns on extended debugging mode (see the description of the B<extdebug> "
 "option to the B<shopt> builtin below)."
 msgstr ""
+"Organiza o perfil do depurador a ser executado antes que o shell inicie.  "
+"Liga o modo estendido de depuração (veja-se a descrição da opção "
+"B<extdebug> para o interno B<shopt> abaixo)."
 
 #. type: TP
 #: man/bash.1:167
 #, no-wrap
 msgid "B<--dump-po-strings>"
-msgstr ""
+msgstr "B<--dump-po-strings>"
 
 #. type: Plain text
 #: man/bash.1:171
@@ -297,40 +303,42 @@ msgid ""
 "Equivalent to B<-D>, but the output is in the GNU I<gettext> B<po> (portable "
 "object) file format."
 msgstr ""
+"Equivalente a B<-D>, mas a saída gerada é no formato de arquivo B<po> "
+"(objeto portável) do GNU I<gettext>."
 
 #. type: TP
 #: man/bash.1:171
 #, no-wrap
 msgid "B<--dump-strings>"
-msgstr ""
+msgstr "B<--dump-strings>"
 
 #. type: Plain text
 #: man/bash.1:174
 msgid "Equivalent to B<-D>."
-msgstr ""
+msgstr "Equivalente a B<-D>."
 
 #. type: TP
 #: man/bash.1:174
 #, no-wrap
 msgid "B<--help>"
-msgstr ""
+msgstr "B<--help>"
 
 #. type: Plain text
 #: man/bash.1:177
 msgid "Display a usage message on standard output and exit successfully."
-msgstr ""
+msgstr "Exibe uma mensagem de uso na saída padrão e sai exitosamente."
 
 #. type: TP
 #: man/bash.1:177
 #, no-wrap
 msgid "B<--init-file> I<file>"
-msgstr ""
+msgstr "B<--init-file> I<arquivo>"
 
 #. type: TP
 #: man/bash.1:180
 #, no-wrap
 msgid "B<--rcfile> I<file>"
-msgstr ""
+msgstr "B<--rcfile> I<arquivo>"
 
 #. type: Plain text
 #: man/bash.1:191
@@ -339,23 +347,26 @@ msgid ""
 "initialization file I<~/.bashrc> if the shell is interactive (see E<.SM> "
 "B<INVOCATION> below)."
 msgstr ""
+"Executa comandos a partir de I<arquivo> em vez do arquivo padrão pessoal de "
+"inicialização I<~/.bashrc> se o shell for interativo (veja-se E<.SM> "
+"B<INVOCAÇÃO> abaixo)."
 
 #. type: TP
 #: man/bash.1:191
 #, no-wrap
 msgid "B<--login>"
-msgstr ""
+msgstr "B<--login>"
 
 #. type: Plain text
 #: man/bash.1:194
 msgid "Equivalent to B<-l>."
-msgstr ""
+msgstr "Equivalente a B<-l>."
 
 #. type: TP
 #: man/bash.1:194
 #, no-wrap
 msgid "B<--noediting>"
-msgstr ""
+msgstr "B<--noediting>"
 
 #. type: Plain text
 #: man/bash.1:199
@@ -363,23 +374,25 @@ msgid ""
 "Do not use the GNU B<readline> library to read command lines when the shell "
 "is interactive."
 msgstr ""
+"Não use a biblioteca GNU B<readline> para ler linhas de comando quando o "
+"shell for interativo."
 
 #. type: TP
 #: man/bash.1:199
 #, no-wrap
 msgid "B<--noprofile>"
-msgstr ""
+msgstr "B<--noprofile>"
 
 #. type: Plain text
 #: man/bash.1:202
 msgid "Do not read either the system-wide startup file"
-msgstr ""
+msgstr "Não leia nem o arquivo de inicialização abrangente a todo o sistema"
 
 #. type: FN
 #: man/bash.1:202 man/bash.1:10231
 #, no-wrap
 msgid "/etc/profile"
-msgstr ""
+msgstr "/etc/profile"
 
 #. type: Plain text
 #: man/bash.1:214
@@ -388,12 +401,16 @@ msgid ""
 "I<~/.bash_login>, or I<~/.profile>.  By default, B<bash> reads these files "
 "when it is invoked as a login shell (see E<.SM> B<INVOCATION> below)."
 msgstr ""
+"ou quaisquer dos arquivos pessoais de inicialização I<~/.bash_profile>, "
+"I<~/.bash_login> ou I<~/.profile>.  Por padrão, B<bash> lê esses arquivos "
+"quando for invocado como um shell de login (veja-se E<.SM> B<INVOCAÇÃO> "
+"abaixo)."
 
 #. type: TP
 #: man/bash.1:214
 #, no-wrap
 msgid "B<--norc>"
-msgstr ""
+msgstr "B<--norc>"
 
 #. type: Plain text
 #: man/bash.1:221
@@ -402,6 +419,9 @@ msgid ""
 "shell is interactive.  This option is on by default if the shell is invoked "
 "as B<sh>."
 msgstr ""
+"Não leia e execute o arquivo pessoal de inicialização I<~/.bashrc> se o "
+"shell for interativo.  Essa opção está ligada por padrão se o shell for "
+"invocado como B<sh>."
 
 #. type: TP
 #: man/bash.1:221
