@@ -7,11 +7,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GNU 4.3\n"
+"Project-Id-Version: GNU Bash Manual Page 4.3\n"
 "Report-Msgid-Bugs-To: jafesp@gmail.com\n"
 "POT-Creation-Date: 2025-03-26 03:39-0300\n"
-"PO-Revision-Date: 2025-03-29 07:10-0300\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2025-03-29 09:30-0300\n"
+"Last-Translator: Jamenson Ferreira Espindula de Almeida Melo "
+"<jafesp@gmail.com>\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -595,6 +596,11 @@ msgid ""
 "option will force B<bash> to read and execute commands from I<file> instead "
 "of I<~/.bashrc>."
 msgstr ""
+"Quando um shell interativo que não é um shell de login é iniciado, "
+"B<bash> lê e executa comandos a partir de I<~/.bashrc>, se esse arquivo "
+"existir.  Isso pode ser inibido usando-se a opção B<--norc>.  A opção "
+"B<--rcfile> I<arquivo> forçará B<bash> a ler e a executar comandos a "
+"partir de I<arquivo> em vez de I<~/.bashrc>."
 
 #. type: Plain text
 #: man/bash.1:347
@@ -605,6 +611,11 @@ msgid ""
 "name of a file to read and execute.  B<Bash> behaves as if the following "
 "command were executed:"
 msgstr ""
+"Quando B<bash> é iniciado não interativamente, para executar um conjunto "
+"de comandos sequenciais de shell, por exemplo, ele procura a variável "
+"E<.SM> B<BASH_ENV> no ambiente, expande o valor dela se ele aparecer lá e "
+"usa o valor expandido como o nome de um arquivo para ler e executar.  "
+"B<Bash> se comporta como se o seguinte comando fosse executado:"
 
 #. type: Plain text
 #: man/bash.1:357
@@ -612,6 +623,8 @@ msgid ""
 "but the value of the E<.SM> B<PATH> variable is not used to search for the "
 "filename."
 msgstr ""
+"mas o valor da variável E<.SM> B<PATH> não é usado para procurar o nome "
+"do arquivo."
 
 #. type: Plain text
 #: man/bash.1:399
@@ -631,6 +644,21 @@ msgid ""
 "attempt to read any other startup files.  When invoked as B<sh>, B<bash> "
 "enters I<posix> mode after the startup files are read."
 msgstr ""
+"Se B<bash> for invocado com o nome B<sh>, ele tenta imitar o comportamento "
+"de iniciação das versões históricas do B<sh> o mais próximo possível, "
+"enquanto conforma-se ao padrão POSIX também.  Quando invocado como um "
+"shell interativo de login, ou um shell não interativo com a opção "
+"B<--login>, ele primeiro tenta ler e executar comandos a partir de "
+"I</etc/profile> e I<~/.profile>, nessa ordem.  A opção B<--noprofile> pode "
+"ser usada para inibir esse comportamento.  Quando invocado como um shell "
+"interativo com o nome B<sh>, B<bash> procura a variável E<.SM> B<ENV>, "
+"expande o valor dela se ele estiver definido e usa o valor expandido como o "
+"nome de um arquivo para ler e executar.  Como um shell invocado como B<sh> "
+"não tenta ler e executar comandos a partir de quaisquer outros arquivos de "
+"iniciação, a opção B<--rcfile> não tem efeito.  Um shell não "
+"interativo invocado com o nome B<sh> não tenta ler quaisquer outros "
+"arquivos de iniciação.  Quando invocado como B<sh>, B<bash> entra no modo "
+"I<posix> depois que os arquivos de iniciação forem lidos."
 
 #. type: Plain text
 #: man/bash.1:413
@@ -641,6 +669,11 @@ msgid ""
 "and executed from the file whose name is the expanded value.  No other "
 "startup files are read."
 msgstr ""
+"Quando B<bash> é iniciado no modo I<posix>, como com na opção de linha de "
+"comando B<--posix>, ele segue o padrão POSIX para arquivos de iniciação.  "
+"Nesse modo, shells interativos expandem a variável E<.SM> B<ENV> e comandos "
+"são lidos e executados a partir do arquivo cujo nome é o valor expandido.  "
+"Nenhum outro arquivo de iniciação é lido."
 
 #. type: Plain text
 #: man/bash.1:430
@@ -655,6 +688,17 @@ msgid ""
 "read, but neither I<rshd> nor I<sshd> generally invoke the shell with those "
 "options or allow them to be specified."
 msgstr ""
+"B<Bash> tenta determinar quando está sendo executado com a entrada padrão "
+"dele conectada a uma conexão de rede de intercomunicação, como quando "
+"executado pelo processo de segundo plano de shell remoto, geralmente I<rshd> "
+"ou o processo de segundo plano de shell seguro I<sshd>.  Se B<bash> "
+"determinar que está sendo executado dessa maneira, ele lerá e executará "
+"comandos a partir de I<~/.bashrc>, se esse arquivo existir e for legível.  "
+"Ele não fará isso se invocado como B<sh>.  A opção B<--norc> pode ser "
+"usada para inibir esse comportamento, e a opção B<--rcfile> pode ser usada "
+"para forçar outro arquivo a ser lido, mas nem I<rshd> nem I<sshd> "
+"geralmente invocam o shell com essas opções ou permitem que elas sejam "
+"especificadas."
 
 #. type: Plain text
 #: man/bash.1:447
@@ -668,35 +712,45 @@ msgid ""
 "invocation, the startup behavior is the same, but the effective user id is "
 "not reset."
 msgstr ""
+"Se o shell for iniciado com o ID efetivo de usuário(a) (grupo) não igual "
+"ao ID real de usuário(a) (grupo), e a opção B<-p> não for fornecida, "
+"nenhum arquivo de iniciação será lido, funções de shell não serão "
+"herdadas a partir do ambiente, as variáveis E<.SM> B<SHELLOPTS>, E<.SM> "
+"B<BASHOPTS>, E<.SM> B<CDPATH> e E<.SM> B<GLOBIGNORE>, se elas aparecerem no "
+"ambiente, serão ignoradas e o ID efetivo de usuário(a) será configurado "
+"como o ID real de usuário(a).  Se a opção B<-p> for fornecida na "
+"invocação, o comportamento de iniciação será o mesmo, mas o ID efetivo "
+"de usuário(a) não será reconfigurado."
 
 #. type: SH
 #: man/bash.1:447
 #, no-wrap
 msgid "DEFINITIONS"
-msgstr ""
+msgstr "DEFINIÇÕES"
 
 #. type: Plain text
 #: man/bash.1:451
 msgid ""
 "The following definitions are used throughout the rest of this document."
 msgstr ""
+"As seguintes definições são usadas ao longo do restante deste documento."
 
 #. type: TP
 #: man/bash.1:452
 #, no-wrap
 msgid "B<blank>"
-msgstr ""
+msgstr "B<branco>"
 
 #. type: Plain text
 #: man/bash.1:455
 msgid "A space or tab."
-msgstr ""
+msgstr "Um espaço ou tabulação."
 
 #. type: TP
 #: man/bash.1:455
 #, no-wrap
 msgid "B<word>"
-msgstr ""
+msgstr "B<palavra>"
 
 #. type: Plain text
 #: man/bash.1:460
@@ -704,12 +758,14 @@ msgid ""
 "A sequence of characters considered as a single unit by the shell.  Also "
 "known as a B<token>."
 msgstr ""
+"Uma sequência de caracteres considerados como uma unidade pelo shell.  "
+"Também conhecido como B<token>."
 
 #. type: TP
 #: man/bash.1:460
 #, no-wrap
 msgid "B<name>"
-msgstr ""
+msgstr "B<nome>"
 
 #. type: Plain text
 #: man/bash.1:468
@@ -718,24 +774,28 @@ msgid ""
 "beginning with an alphabetic character or an underscore.  Also referred to "
 "as an B<identifier>."
 msgstr ""
+"Uma I<palavra> consistindo somente de caracteres alfanuméricos e "
+"sublinhados e começando com um caracter alfabético ou um sublinhado.  "
+"Também referido como um B<identificador>."
 
 #. type: TP
 #: man/bash.1:468
 #, no-wrap
 msgid "B<metacharacter>"
-msgstr ""
+msgstr "B<metacaracter>"
 
 #. type: Plain text
 #: man/bash.1:471
 msgid ""
 "A character that, when unquoted, separates words.  One of the following:"
 msgstr ""
+"Um caracter que, quando não aspeado, separa palavras.  Um dos seguintes:"
 
 #. type: TP
 #: man/bash.1:478
 #, no-wrap
 msgid "B<control operator>"
-msgstr ""
+msgstr "B<operador de controle>"
 
 #. type: Plain text
 #: man/bash.1:482
@@ -743,6 +803,8 @@ msgid ""
 "A I<token> that performs a control function.  It is one of the following "
 "symbols:"
 msgstr ""
+"Um I<token> que realiza uma função de controle.  Ele é um dos seguintes "
+"símbolos:"
 
 #. type: SH
 #: man/bash.1:488
