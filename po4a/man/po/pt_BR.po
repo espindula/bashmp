@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: GNU 4.3\n"
 "Report-Msgid-Bugs-To: jafesp@gmail.com\n"
 "POT-Creation-Date: 2025-03-26 03:39-0300\n"
-"PO-Revision-Date: 2025-03-27 08:39-0300\n"
+"PO-Revision-Date: 2025-03-29 07:10-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
@@ -427,7 +427,7 @@ msgstr ""
 #: man/bash.1:221
 #, no-wrap
 msgid "B<--posix>"
-msgstr ""
+msgstr "B<--posix>"
 
 #. type: Plain text
 #: man/bash.1:230 man/bash.1:8959
@@ -437,34 +437,39 @@ msgid ""
 "ALSO> below for a reference to a document that details how posix mode "
 "affects bash's behavior."
 msgstr ""
+"Mude o comportamento do B<bash> onde a operação padrão difere do padrão "
+"POSIX para corresponder ao padrão (I<modo posix>).  Veja-se E<.SM> B<VEJA "
+"TAMBÉM> abaixo para uma referência para um documento que detalha como o "
+"modo posix afeta o comportamento do bash."
 
 #. type: TP
 #: man/bash.1:230
 #, no-wrap
 msgid "B<--restricted>"
-msgstr ""
+msgstr "B<--restricted>"
 
 #. type: Plain text
 #: man/bash.1:236
 msgid "The shell becomes restricted (see E<.SM> B<RESTRICTED SHELL> below)."
 msgstr ""
+"O shell se torna restringido (veja-se E<.SM> B<SHELL RESTRINGIDO> abaixo)."
 
 #. type: TP
 #: man/bash.1:236
 #, no-wrap
 msgid "B<--verbose>"
-msgstr ""
+msgstr "B<--verbose>"
 
 #. type: Plain text
 #: man/bash.1:239
 msgid "Equivalent to B<-v>."
-msgstr ""
+msgstr "Equivalente a B<-v>."
 
 #. type: TP
 #: man/bash.1:239
 #, no-wrap
 msgid "B<--version>"
-msgstr ""
+msgstr "B<--version>"
 
 #. type: Plain text
 #: man/bash.1:244
@@ -472,12 +477,14 @@ msgid ""
 "Show version information for this instance of B<bash> on the standard output "
 "and exit successfully."
 msgstr ""
+"Mostre informações de versão para esta instância do B<bash> na saída "
+"padrão e saia com sucesso."
 
 #. type: SH
 #: man/bash.1:245
 #, no-wrap
 msgid "ARGUMENTS"
-msgstr ""
+msgstr "ARGUMENTOS"
 
 #. type: Plain text
 #: man/bash.1:268
@@ -493,12 +500,24 @@ msgid ""
 "directory, and, if no file is found, then the shell searches the directories "
 "in E<.SM> B<PATH> for the script."
 msgstr ""
+"Se argumentos restarem depois do processamento de opção e nem a opção "
+"B<-c> nem a B<-s> tiverem sido fornecidas, o primeiro argumento será "
+"considerado o nome de um arquivo contendo comandos de shell.  Se B<bash> for "
+"invocado dessa maneira, B<$0> será configurado para o nome do arquivo e os "
+"parâmetros posicionais serão configurados para os argumentos restantes.  "
+"B<Bash> lê e executa comandos provenientes desse arquivo e sai.  A "
+"situação de saída do B<bash> será a situação de saída do último "
+"comando executado no conjunto de comandos sequenciais.  Se nenhum comando "
+"for executado, a situação de saída será 0.  Uma tentativa será feita "
+"primeiro para abrir o arquivo no diretório atual e, se nenhum arquivo for "
+"encontrado, então o shell pesquisará nos diretórios na E<.SM> B<PATH> "
+"pelo conjunto de comandos sequenciais."
 
 #. type: SH
 #: man/bash.1:268
 #, no-wrap
 msgid "INVOCATION"
-msgstr ""
+msgstr "INVOCAÇÃO"
 
 #. type: Plain text
 #: man/bash.1:274
@@ -506,6 +525,8 @@ msgid ""
 "A I<login shell> is one whose first character of argument zero is a B<->, or "
 "one started with the B<--login> option."
 msgstr ""
+"Um I<shell de login> é aquele cujo primeiro caractere do argumento zero é "
+"um B<-> ou um iniciado com a opção B<--login>."
 
 #. type: Plain text
 #: man/bash.1:295
@@ -516,6 +537,12 @@ msgid ""
 "option.  E<.SM> B<PS1> is set and B<$-> includes B<i> if B<bash> is "
 "interactive, allowing a shell script or a startup file to test this state."
 msgstr ""
+"Um shell I<interativo> é um iniciado sem argumentos de não opção e sem a "
+"opção B<-c> cujos entrada e erro padrão estão conectados a terminais "
+"(conforme determinado por I<isatty>(3)) ou um iniciado com a opção B<-i>.  "
+"E<.SM> B<PS1> será configurada e B<$-> incluirá B<i> se B<bash> for "
+"interativo, permitindo que um conjunto de comandos sequenciais de shell ou "
+"um arquivo de iniciação teste esse estado."
 
 #. type: Plain text
 #: man/bash.1:308
@@ -525,6 +552,11 @@ msgid ""
 "Tildes are expanded in filenames as described below under B<Tilde Expansion> "
 "in the E<.SM> B<EXPANSION> section."
 msgstr ""
+"Os parágrafos seguintes descrevem como B<bash> executa os arquivos de "
+"iniciação dele.  Se algum dos arquivos existirem, mas não puderem ser "
+"lidos, B<bash> informará um erro.  Til serão expandidos em nomes de "
+"arquivos, conforme descrito abaixo sob B<Expansão de Til> na seção E<.SM> "
+"B<EXPANSÃO>."
 
 #. type: Plain text
 #: man/bash.1:321
@@ -537,6 +569,13 @@ msgid ""
 "one that exists and is readable.  The B<--noprofile> option may be used when "
 "the shell is started to inhibit this behavior."
 msgstr ""
+"Quando B<bash> for invocado como um shell interativo de login ou como um "
+"shell não interativo com a opção B<--login>, ele primeiro lerá e "
+"executará comandos a partir do arquivo I</etc/profile>, se esse arquivo "
+"existir.  Depois de ler esse arquivo, ele procurará por I<~/.bash_profile>, "
+"I<~/.bash_login> e I<~/.profile>, nessa ordem, e lerá e executará comandos "
+"a partir do primeiro que existir e for legível.  A opção B<--noprofile> "
+"pode ser usada, quando o shell for iniciado, para inibir esse comportamento."
 
 #. type: Plain text
 #: man/bash.1:326
@@ -544,6 +583,8 @@ msgid ""
 "When a login shell exits, B<bash> reads and executes commands from the file "
 "I<~/.bash_logout>, if it exists."
 msgstr ""
+"Quando um shell de login sai, B<bash> lê e executa comandos a partir do "
+"arquivo I<~/.bash_logout>, se existir."
 
 #. type: Plain text
 #: man/bash.1:336
