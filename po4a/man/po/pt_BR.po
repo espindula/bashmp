@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: GNU Bash Manual Page 4.3\n"
 "Report-Msgid-Bugs-To: jafesp@gmail.com\n"
 "POT-Creation-Date: 2025-03-26 03:39-0300\n"
-"PO-Revision-Date: 2025-03-29 09:30-0300\n"
+"PO-Revision-Date: 2025-03-31 09:00-0300\n"
 "Last-Translator: Jamenson Ferreira Espindula de Almeida Melo "
 "<jafesp@gmail.com>\n"
 "Language-Team: none\n"
@@ -810,7 +810,7 @@ msgstr ""
 #: man/bash.1:488
 #, no-wrap
 msgid "RESERVED WORDS"
-msgstr ""
+msgstr "PALAVRAS RESERVADAS"
 
 #. type: Plain text
 #: man/bash.1:499
@@ -820,23 +820,28 @@ msgid ""
 "first word of a simple command (see E<.SM> B<SHELL GRAMMAR> below) or the "
 "third word of a B<case> or B<for> command:"
 msgstr ""
+"I<Palavras reservadas> são palavras que tem um significado especial para o "
+"shell.  As seguintes palavras são reconhecidas como reservadas quando não "
+"aspeadas, seja a primeira palavra de um comando simples (veja-se E<.SM> "
+"B<GRAMÁTICA DO SHELL> abaixo), seja a terceira palavra de um comando "
+"B<case> ou B<for>:"
 
 #. type: Plain text
 #: man/bash.1:502 man/bash.1:3447
 msgid "E<.B>"
-msgstr ""
+msgstr "E<.B>"
 
 #. type: SH
 #: man/bash.1:505
 #, no-wrap
 msgid "SHELL GRAMMAR"
-msgstr ""
+msgstr "GRAMÁTICA DO SHELL"
 
 #. type: SS
 #: man/bash.1:506
 #, no-wrap
 msgid "Simple Commands"
-msgstr ""
+msgstr "Comandos Simples"
 
 #. type: Plain text
 #: man/bash.1:513
@@ -847,6 +852,11 @@ msgid ""
 "passed as argument zero.  The remaining words are passed as arguments to the "
 "invoked command."
 msgstr ""
+"Um I<comando simples> é uma sequência de atribuições opcionais de "
+"variáveis seguidas por palavras e redireções separadas por B<branco> e "
+"terminadas por um I<operador de controle>.  A primeira palavra especifica o "
+"comando a ser executado e é passada como argumento zero.  As palavras "
+"restantes são passadas como argumentos para o comando invocado."
 
 #. type: Plain text
 #: man/bash.1:517
@@ -854,12 +864,14 @@ msgid ""
 "The return value of a I<simple command> is its exit status, or 128+I<n\\^> "
 "if the command is terminated by signal I<n>."
 msgstr ""
+"O valor de retorno de um I<comando simples> é a situação de saída dele, "
+"ou 128+I<n\\^> se o comando for terminado pelo sinal I<n>."
 
 #. type: SS
 #: man/bash.1:517
 #, no-wrap
 msgid "Pipelines"
-msgstr ""
+msgstr "Pipelines"
 
 #. type: Plain text
 #: man/bash.1:524
@@ -867,11 +879,14 @@ msgid ""
 "A I<pipeline> is a sequence of one or more commands separated by one of the "
 "control operators B<|> or B<|&>.  The format for a pipeline is:"
 msgstr ""
+"Um I<pipeline> é uma sequência de um ou mais comandos separados por um dos "
+"operadores de controle B<|> ou B<|&>.  O formato para um pipeline é:"
 
 #. type: Plain text
 #: man/bash.1:527
 msgid "[B<time> [B<-p>]] [ ! ] I<command> [ [B<|>\\(bvB<|&>] I<command2> ... ]"
 msgstr ""
+"[B<time> [B<-p>]] [ ! ] I<comando> [ [B<|>\\(bvB<|&>] I<comando2> ... ]"
 
 #. type: Plain text
 #: man/bash.1:544
@@ -884,6 +899,14 @@ msgid ""
 "for B<2E<gt>&1 |>.  This implicit redirection of the standard error to the "
 "standard output is performed after any redirections specified by the command."
 msgstr ""
+"A saída padrão de I<comando> é conectada por meio de um tubo à entrada "
+"padrão de I<comando2>.  Essa conexão é realizada antes de quaisquer "
+"redireções especificadas pelo comando (veja-se E<.SM> B<REDIREÇÃO> "
+"abaixo).  Se B<|&> for usado, o erro padrão de I<comando>, além da saída "
+"padrão dele, será conectado à entrada padrão de I<comando2> por meio do "
+"tubo; ela é abreviada para B<2E<gt>&1 |>.  Essa redireção implícita do "
+"erro padrão para a saída padrão é realizada depois de quaisquer "
+"redireções especificadas pelo comando."
 
 #. type: Plain text
 #: man/bash.1:556
@@ -896,6 +919,15 @@ msgid ""
 "is the logical negation of the exit status as described above.  The shell "
 "waits for all commands in the pipeline to terminate before returning a value."
 msgstr ""
+"A sitação de retorno de um pipeline é a situação de saída do último "
+"comando, a menos que a opção B<pipefail> esteja habilitada.  Se "
+"B<pipefail> estiver habilitada, a situação de retorno do pipeline será o "
+"valor do último comando (mais à direita) a sair com uma situação "
+"diferente de zero, ou zero se todos os comandos sairem com sucesso.  Se a "
+"palavra reservada B<!> preceder um pipeline, a situação de saída desse "
+"pipeline será a negação lógica da situação de saída, conforme "
+"descrito acima.  O shell aguarda que todos os comandos no pipeline terminem "
+"antes de retornar um valor."
 
 #. type: Plain text
 #: man/bash.1:575
@@ -909,6 +941,15 @@ msgid ""
 "specifies how the timing information should be displayed; see the "
 "description of E<.SM> B<TIMEFORMAT> under B<Shell Variables> below."
 msgstr ""
+"Se a palavra reservada B<time> preceder um pipeline, o tempo decorrido, bem "
+"como o de usuário(a) e o de sistema, consumido pela execução dele será "
+"informado quando o pipeline terminar.  A opção B<-p> muda o formato da "
+"saída gerada para aquele especificado por POSIX.  Quando o shell estiver no "
+"I<modo posix>, ele não reconhece B<time> como uma palavra reservada se o "
+"próximo token começar com um `-'.  A variável E<.SM> B<TIMEFORMAT> pode "
+"ser configurada para uma sequência de caracteres de formato que especifique "
+"como as informações de tempo deveriam ser exibidas; veja-se a descrição "
+"de E<.SM> B<TIMEFORMAT> sob B<Variáveis de Shell> abaixo."
 
 #. type: Plain text
 #: man/bash.1:584
@@ -918,6 +959,11 @@ msgid ""
 "the shell and its children.  The E<.SM> B<TIMEFORMAT> variable may be used "
 "to specify the format of the time information."
 msgstr ""
+"Quando o shell estiver no I<modo posix>, B<time> pode ser seguida por uma "
+"nova linha.  Nesse caso, o shell exibirá o tempo total de usuário(a) e de "
+"sistema consumido pelo shell e os descendentes dele.  A variável E<.SM> "
+"B<TIMEFORMAT> pode ser usada para se especificar o formato das informações "
+"de tempo."
 
 #. type: Plain text
 #: man/bash.1:587
