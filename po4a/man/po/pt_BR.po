@@ -775,21 +775,21 @@ msgid ""
 "as an B<identifier>."
 msgstr ""
 "Uma I<palavra> consistindo somente de caracteres alfanuméricos e "
-"sublinhados e começando com um caracter alfabético ou um sublinhado.  "
+"sublinhados e começando com um caractere alfabético ou um sublinhado.  "
 "Também referido como um B<identificador>."
 
 #. type: TP
 #: man/bash.1:468
 #, no-wrap
 msgid "B<metacharacter>"
-msgstr "B<metacaracter>"
+msgstr "B<metacaractere>"
 
 #. type: Plain text
 #: man/bash.1:471
 msgid ""
 "A character that, when unquoted, separates words.  One of the following:"
 msgstr ""
-"Um caracter que, quando não aspeado, separa palavras.  Um dos seguintes:"
+"Um caractere que, quando não aspeado, separa palavras.  Um dos seguintes:"
 
 #. type: TP
 #: man/bash.1:478
@@ -919,11 +919,11 @@ msgid ""
 "is the logical negation of the exit status as described above.  The shell "
 "waits for all commands in the pipeline to terminate before returning a value."
 msgstr ""
-"A sitação de retorno de um pipeline é a situação de saída do último "
+"A situação de retorno de um pipeline é a situação de saída do último "
 "comando, a menos que a opção B<pipefail> esteja habilitada.  Se "
 "B<pipefail> estiver habilitada, a situação de retorno do pipeline será o "
 "valor do último comando (mais à direita) a sair com uma situação "
-"diferente de zero, ou zero se todos os comandos sairem com sucesso.  Se a "
+"diferente de zero, ou zero se todos os comandos saírem com sucesso.  Se a "
 "palavra reservada B<!> preceder um pipeline, a situação de saída desse "
 "pipeline será a negação lógica da situação de saída, conforme "
 "descrito acima.  O shell aguarda que todos os comandos no pipeline terminem "
