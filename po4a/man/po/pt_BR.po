@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: GNU Bash Manual Page 4.3\n"
 "Report-Msgid-Bugs-To: jafesp@gmail.com\n"
 "POT-Creation-Date: 2025-03-26 03:39-0300\n"
-"PO-Revision-Date: 2025-03-31 09:00-0300\n"
+"PO-Revision-Date: 2025-04-01 13:00-0300\n"
 "Last-Translator: Jamenson Ferreira Espindula de Almeida Melo "
 "<jafesp@gmail.com>\n"
 "Language-Team: none\n"
@@ -971,12 +971,14 @@ msgid ""
 "Each command in a pipeline is executed as a separate process (i.e., in a "
 "subshell)."
 msgstr ""
+"Cada comando em um pipeline é executado como um processo separado (ou seja, "
+"em um subshell)."
 
 #. type: SS
 #: man/bash.1:587
 #, no-wrap
 msgid "Lists"
-msgstr ""
+msgstr "Listas"
 
 #. type: Plain text
 #: man/bash.1:601
@@ -985,6 +987,9 @@ msgid ""
 "operators B<;>, B<&>, B<&&>, or B<||>, and optionally terminated by one of "
 "B<;>, B<&>, or B<E<lt>newlineE<gt>>."
 msgstr ""
+"Uma I<lista> é uma sequência de um ou mais pipelines separados por um dos "
+"operadores B<;>, B<&>, B<&&> ou B<||> e, opcionalmente, terminada por um de "
+"B<;>, B<&> ou B<E<lt>novalinhaE<gt>>."
 
 #. type: Plain text
 #: man/bash.1:611
@@ -992,6 +997,8 @@ msgid ""
 "Of these list operators, B<&&> and B<||> have equal precedence, followed by "
 "B<;> and B<&>, which have equal precedence."
 msgstr ""
+"Desses operadores de lista, B<&&> e B<||> tem precedência igual, seguidos "
+"por B<;> e B<&>, que tem precedência igual."
 
 #. type: Plain text
 #: man/bash.1:614
@@ -999,6 +1006,8 @@ msgid ""
 "A sequence of one or more newlines may appear in a I<list> instead of a "
 "semicolon to delimit commands."
 msgstr ""
+"Uma sequência de um ou mais novas linhas pode aparecer em uma I<lista> em "
+"vez de um ponto e virgula para delimitar os comandos."
 
 #. type: Plain text
 #: man/bash.1:624
@@ -1010,6 +1019,12 @@ msgid ""
 "terminate in turn.  The return status is the exit status of the last command "
 "executed."
 msgstr ""
+"Se um comando for terminado pelo operador de controle B<&>, o shell executa "
+"o comando no I<segundo plano> em um subshell.  O shell não espera que o "
+"comando finalize e a situação de retorno é 0.  Comandos separados por um "
+"B<;> são executados sequencialmente; o shell aguarda que cada comando "
+"termine em sequência.  A situação de retorno é a situação de saída do "
+"último comando executado."
 
 #. type: Plain text
 #: man/bash.1:629
@@ -1018,11 +1033,14 @@ msgid ""
 "B<&&> and B<||> control operators, respectively.  AND and OR lists are "
 "executed with left associativity.  An AND list has the form"
 msgstr ""
+"Listas E e OU são sequências de um dos mais pipelines separados pelos "
+"operadores de controle B<&&> e B<||>, respectivamente.  Listas E e OU são "
+"executadas com associatividade esquerda.  Uma lista E tem a forma"
 
 #. type: Plain text
 #: man/bash.1:632
 msgid "I<command1> B<&&> I<command2>"
-msgstr ""
+msgstr "I<comando1> B<&&> I<comando2>"
 
 #. type: Plain text
 #: man/bash.1:638
@@ -1030,16 +1048,18 @@ msgid ""
 "I<command2> is executed if, and only if, I<command1> returns an exit status "
 "of zero."
 msgstr ""
+"I<comando2> é executado se, e somente se, I<comando1> retornar uma "
+"situação de saída de zero."
 
 #. type: Plain text
 #: man/bash.1:640
 msgid "An OR list has the form"
-msgstr ""
+msgstr "Uma lista OU tem a forma"
 
 #. type: Plain text
 #: man/bash.1:643
 msgid "I<command1> B<||> I<command2>"
-msgstr ""
+msgstr "I<comando1> B<||> I<comando2>"
 
 #. type: Plain text
 #: man/bash.1:653
@@ -1048,12 +1068,15 @@ msgid ""
 "status.  The return status of AND and OR lists is the exit status of the "
 "last command executed in the list."
 msgstr ""
+"I<comando2> é executado se, e somente se, I<comando1> retornar uma "
+"situação de saída diferente de zero.  A situação de retorno das listas "
+"E e OU é a situação de saída do último comando executado na lista."
 
 #. type: SS
 #: man/bash.1:653
 #, no-wrap
 msgid "Compound Commands"
-msgstr ""
+msgstr "Comandos Compostos"
 
 #. type: Plain text
 #: man/bash.1:659
@@ -1062,12 +1085,16 @@ msgid ""
 "command's description may be separated from the rest of the command by one "
 "or more newlines, and may be followed by a newline in place of a semicolon."
 msgstr ""
+"Um I<comando composto> é um dos seguintes.  Na maioria dos casos, uma "
+"I<lista> em uma descrição de comando pode ser separada do restante do "
+"comando por um ou mais novas linhas e pode ser seguida por uma nova linha no "
+"lugar de um ponto e virgula."
 
 #. type: TP
 #: man/bash.1:659
 #, no-wrap
 msgid "(I<list>)"
-msgstr ""
+msgstr "(I<lista>)"
 
 #. type: Plain text
 #: man/bash.1:669
@@ -1077,12 +1104,17 @@ msgid ""
 "that affect the shell's environment do not remain in effect after the "
 "command completes.  The return status is the exit status of I<list>."
 msgstr ""
+"I<lista> é executada em um ambiente de subshell (veja-se E<.SM> B<AMBIENTE "
+"DE EXECUÇÃO DE COMANDO> abaixo).  Atribuições de variáveis e comandos "
+"internos que afetem o ambiente do shell não permanecem em vigor depois que "
+"o comando conclua.  A situação de retorno é a situação de saída de "
+"I<lista>."
 
 #. type: TP
 #: man/bash.1:669
 #, no-wrap
 msgid "{ I<list>; }"
-msgstr ""
+msgstr "{ I<lista>; }"
 
 #. type: Plain text
 #: man/bash.1:681
@@ -1095,12 +1127,20 @@ msgid ""
 "they do not cause a word break, they must be separated from I<list> by "
 "whitespace or another shell metacharacter."
 msgstr ""
+"I<lista> simplesmente é executada no ambiente atual de shell.  I<lista> "
+"precisa ser terminada com um nova linha ou ponto e virgula.  Isso é "
+"conhecido como um I<comando de grupo>.  A situação de retorno é a "
+"situação de saída de I<lista>.  Observe que, diferentemente dos "
+"metacaracteres B<(> e B<)>, B<{> e B<}> são I<palavras reservadas> e "
+"precisam ocorrer onde uma palavra reservada for permitida para ser "
+"reconhecida.  Como eles não causam uma quebra de palavra, eles precisam ser "
+"separados de I<lista> por espaço em branco ou outro metacaractere de shell."
 
 #. type: TP
 #: man/bash.1:681
 #, no-wrap
 msgid "((I<expression>))"
-msgstr ""
+msgstr "((I<expressão>))"
 
 #. type: Plain text
 #: man/bash.1:690
@@ -1110,6 +1150,11 @@ msgid ""
 "non-zero, the return status is 0; otherwise the return status is 1.  This is "
 "exactly equivalent to B<let \">I<expression>B<\">."
 msgstr ""
+"A I<expressão> é avaliada de acordo com as regras descritas abaixo sob "
+"E<.SM> B<AVALIAÇÃO ARITMÉTICA>.  Se o valor de expressão for diferente "
+"de zero, a situação de retorno será 0; caso contrário, a situação de "
+"retorno será 1.  Isso é exatamente equivalente a B<let "
+"\">I<expressão>B<\">."
 
 #. type: TP
 #: man/bash.1:690
