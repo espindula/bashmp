@@ -1267,12 +1267,14 @@ msgid ""
 "Expressions may be combined using the following operators, listed in "
 "decreasing order of precedence:"
 msgstr ""
+"Expressões podem ser combinadas usando-se os seguintes operadores, listados "
+"em ordem decrescente de precedência:"
 
 #. type: TP
 #: man/bash.1:765
 #, no-wrap
 msgid "B<( >I<expression>B< )>"
-msgstr ""
+msgstr "B<( >I<expressão>B< )>"
 
 #. type: Plain text
 #: man/bash.1:769
@@ -1280,39 +1282,42 @@ msgid ""
 "Returns the value of I<expression>.  This may be used to override the normal "
 "precedence of operators."
 msgstr ""
+"Retorna o valor de I<expressão>.  Isso pode ser usado para substituir a "
+"precedência normal de operadores."
 
 #. type: TP
 #: man/bash.1:769
 #, no-wrap
 msgid "B<! >I<expression>"
-msgstr ""
+msgstr "B<! >I<expressão>"
 
 #. type: Plain text
 #: man/bash.1:774
 msgid "True if I<expression> is false."
-msgstr ""
+msgstr "Verdadeiro se I<expressão> for falsa."
 
 #. type: TP
 #: man/bash.1:774
 #, no-wrap
 msgid "I<expression1> B<&&> I<expression2>"
-msgstr ""
+msgstr "I<expressão1> B<&&> I<expressão2>"
 
 #. type: Plain text
 #: man/bash.1:781
 msgid "True if both I<expression1> and I<expression2> are true."
-msgstr ""
+msgstr "Verdadeiro se ambas I<expressão1> e I<expressão2> forem verdadeiras."
 
 #. type: TP
 #: man/bash.1:781
 #, no-wrap
 msgid "I<expression1> B<||> I<expression2>"
-msgstr ""
+msgstr "I<expressão1> B<||> I<expressão2>"
 
 #. type: Plain text
 #: man/bash.1:788
 msgid "True if either I<expression1> or I<expression2> is true."
 msgstr ""
+"Verdadeiro se, ou I<expressão1>, ou B<||> I<expressão2>, for verdadeira."
 
 #. type: Plain text
 #: man/bash.1:794
@@ -1321,12 +1326,16 @@ msgid ""
 "I<expression1> is sufficient to determine the return value of the entire "
 "conditional expression."
 msgstr ""
+"Os operadores B<&&> e B<||> não avaliam I<expressão2> se o valor de "
+"I<expressão1> for suficiente para determinar o valor de retorno da "
+"expressão condicional inteira."
 
 #. type: TP
 #: man/bash.1:795
 #, no-wrap
 msgid "B<for> I<name> [ [ B<in> [ I<word ...> ] ] ; ] B<do> I<list> ; B<done>"
 msgstr ""
+"B<for> I<nome> [ [ B<in> [ I<palavra ...> ] ] ; ] B<do> I<lista> ; B<done>"
 
 #. type: Plain text
 #: man/bash.1:809
@@ -1340,12 +1349,21 @@ msgid ""
 "results in an empty list, no commands are executed, and the return status is "
 "0."
 msgstr ""
+"A lista de palavras seguindo B<in> será expandida, gerando uma lista de "
+"itens.  A variável I<nome> será configurada para cada elemento dessa lista "
+"em sequência, e I<lista> será executada a cada vez.  Se I<palavra> do "
+"B<in> for omitida, o comando B<for> executará I<lista> uma vez para cada "
+"parâmetro posicional que for configurado (veja-se E<.SM> B<PARÂMETROS> "
+"abaixo).  A situação de retorno é a situação de saída do último "
+"comando que executar.  Se a expansão dos itens seguindo B<in> resultar em "
+"uma lista vazia, nenhum comando será executado, e a situação de retorno "
+"será 0."
 
 #. type: TP
 #: man/bash.1:809
 #, no-wrap
 msgid "B<for> (( I<expr1> ; I<expr2> ; I<expr3> )) ; B<do> I<list> ; B<done>"
-msgstr ""
+msgstr "B<for> (( I<expr1> ; I<expr2> ; I<expr3> )) ; B<do> I<lista> ; B<done>"
 
 #. type: Plain text
 #: man/bash.1:822
@@ -1359,6 +1377,15 @@ msgid ""
 "status of the last command in I<list> that is executed, or false if any of "
 "the expressions is invalid."
 msgstr ""
+"Primeiro, a expressão aritmética I<expr1> será avaliada de acordo com as "
+"regras descritas abaixo sob E<.SM> B<AVALIAÇÃO ARITMÉTICA>.  A expressão "
+"aritmética I<expr2> será então avaliada repetidamente até que ela avalie "
+"para zero.  Cada vez que I<expr2> avaliar para um valor diferente de zero, "
+"I<lista> será executada e a expressão aritmética I<expr3> será "
+"avaliada.  Se alguma expressão for omitida, ela se comportará como se "
+"avaliasse para 1.  O valor de retorno é a situação de saída do último "
+"comando em I<lista> que for executado, ou falso se alguma das expressões "
+"for inválida."
 
 #. type: TP
 #: man/bash.1:822
