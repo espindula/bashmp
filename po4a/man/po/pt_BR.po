@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: GNU Bash Manual Page 4.3\n"
 "Report-Msgid-Bugs-To: jafesp@gmail.com\n"
 "POT-Creation-Date: 2025-03-26 03:39-0300\n"
-"PO-Revision-Date: 2025-04-01 13:00-0300\n"
+"PO-Revision-Date: 2025-04-03 09:00-0300\n"
 "Last-Translator: Jamenson Ferreira Espindula de Almeida Melo "
 "<jafesp@gmail.com>\n"
 "Language-Team: none\n"
@@ -1160,7 +1160,7 @@ msgstr ""
 #: man/bash.1:690
 #, no-wrap
 msgid "B<[[> I<expression> B<]]>"
-msgstr ""
+msgstr "B<[[> I<expressão> B<]]>"
 
 #. type: Plain text
 #: man/bash.1:704
@@ -1174,6 +1174,14 @@ msgid ""
 "performed.  Conditional operators such as B<-f> must be unquoted to be "
 "recognized as primaries."
 msgstr ""
+"Retorna uma situação de 0 ou 1 dependendo da avaliação da expressão "
+"condicional I<expressão>.  Expressões são compostas das primárias "
+"descritas abaixo sob E<.SM> B<EXPRESSÕES CONDICIONAIS>.  Divisão de "
+"palavras e expansão de nome de caminho não são realizadas nas palavras "
+"entre o B<[[> e B<]]>; expansão de til, expansão de parâmetro e de "
+"variável, expansão aritmética, substituição de comando, substituição "
+"de processo e remoção de aspas são realizadas.  Operadores condicionais "
+"como B<-f> precisam estar sem aspas para serem reconhecidos como primárias."
 
 #. type: Plain text
 #: man/bash.1:708
@@ -1181,6 +1189,8 @@ msgid ""
 "When used with B<[[>, the B<E<lt>> and B<E<gt>> operators sort "
 "lexicographically using the current locale."
 msgstr ""
+"Quando usados ​​com B<[[>, os operadores B<E<lt>> e B<E<gt>> ordenam "
+"lexicograficamente usando o local atual."
 
 #. type: Plain text
 #: man/bash.1:723
@@ -1195,6 +1205,16 @@ msgid ""
 "part of the pattern may be quoted to force the quoted portion to be matched "
 "as a string."
 msgstr ""
+"Quando os operadores B<==> e B<!=> forem usados, a sequência de caracteres "
+"à direita do operador será considerada um padrão e correspondida de "
+"acordo com as regras descritas abaixo sob B<Correspondência de Padrões>, "
+"como se a opção de shell B<extglob> estivesse habilitada.  O operador B<=> "
+"é equivalente ao B<==>.  Se a opção de shell B<nocasematch> estiver "
+"habilitada, a correspondência será realizada sem considerar a espécie dos "
+"caracteres alfabéticos.  O valor de retorno será 0 se a sequência de "
+"caracteres corresponder (B<==>) ou não corresponder (B<!=>) ao padrão, e 1 "
+"caso contrário.  Qualquer parte do padrão pode ser aspeada para forçar a "
+"parte aspeada a ser correspondida como uma sequência de caracteres."
 
 #. type: Plain text
 #: man/bash.1:757
@@ -1218,6 +1238,28 @@ msgid ""
 "element of E<.SM> B<BASH_REMATCH> with index I<n> is the portion of the "
 "string matching the I<n>th parenthesized subexpression."
 msgstr ""
+"Um operador binário adicional, B<=~>, está disponível, com a mesma "
+"precedência que B<==> e B<!=>.  Quando usado, a sequência de caracteres à "
+"direita do operador será considerada uma expressão regular estendida e "
+"correspondida adequadamente (como em I<regex>(3)).  O valor de retorno será "
+"0 se a sequência de caracteres corresponder ao padrão e 1 caso "
+"contrário.  Se a expressão regular estiver sintaticamente incorreta, o "
+"valor de retorno da expressão condicional será 2.  Se a opção de shell "
+"B<nocasematch> estiver habilitada, a correspondência será realizada sem "
+"considerar a espécie dos caracteres alfabéticos.  Qualquer parte do "
+"padrão pode ser aspeada para forçar a parte aspeada a ser correspondida "
+"como uma sequência de caracteres.  Expressões de colchetes em expressões "
+"regulares precisam ser tratadas com cuidado, pois caracteres normais de "
+"aspas perdem os significados deles entre colchetes.  Se o padrão for "
+"armazenado em uma variável de shell, aspear a expansão da variável força "
+"o padrão inteiro a ser correspondido como uma sequência de caracteres.  "
+"Subsequências de caracteres correspondidas por subexpressões entre "
+"parênteses dentro da expressão regular serão salvas na variável de "
+"matriz E<.SM> B<BASH_REMATCH>.  O elemento de E<.SM> B<BASH_REMATCH> com "
+"índice 0 é a parte da sequência de caracteres correspondente à "
+"expressão regular inteira.  O elemento de E<.SM> B<BASH_REMATCH> com "
+"índice I<n> é a parte da sequência de caracteres correspondente à "
+"I<n>ésima subexpressão entre parênteses."
 
 #. type: Plain text
 #: man/bash.1:761
