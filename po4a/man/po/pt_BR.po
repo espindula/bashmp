@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: GNU Bash Manual Page 4.3\n"
 "Report-Msgid-Bugs-To: jafesp@gmail.com\n"
 "POT-Creation-Date: 2025-03-26 03:39-0300\n"
-"PO-Revision-Date: 2025-04-04 16:00-0300\n"
+"PO-Revision-Date: 2025-04-04 17:00-0300\n"
 "Last-Translator: Jamenson Ferreira Espindula de Almeida Melo "
 "<jafesp@gmail.com>\n"
 "Language-Team: none\n"
@@ -1542,7 +1542,7 @@ msgstr ""
 #: man/bash.1:915
 #, no-wrap
 msgid "Coprocesses"
-msgstr ""
+msgstr "Coprocessos"
 
 #. type: Plain text
 #: man/bash.1:922
@@ -1552,16 +1552,21 @@ msgid ""
 "been terminated with the B<&> control operator, with a two-way pipe "
 "established between the executing shell and the coprocess."
 msgstr ""
+"Um I<coprocesso> é um comando de shell precedido pela palavra reservada "
+"B<coproc>.  Um coprocesso será executado assincronamente em um subshell, "
+"como se o comando tivesse sido terminado com o operador de controle B<&>, "
+"com um tubo bidirecional estabelecido entre o shell em execução e o "
+"coprocesso."
 
 #. type: Plain text
 #: man/bash.1:924
 msgid "The format for a coprocess is:"
-msgstr ""
+msgstr "O formato para um coprocesso é:"
 
 #. type: Plain text
 #: man/bash.1:927
 msgid "B<coproc> [I<NAME>] I<command> [I<redirections>]"
-msgstr ""
+msgstr "B<coproc> [I<NOME>] I<comando> [I<redireções>]"
 
 #. type: Plain text
 #: man/bash.1:957
@@ -1583,6 +1588,25 @@ msgid ""
 "coprocess is available as the value of the variable I<NAME>_PID.  The "
 "B<wait> builtin command may be used to wait for the coprocess to terminate."
 msgstr ""
+"Isso cria um coprocesso chamado I<NOME>.  Se I<NOME> não for fornecido, o "
+"nome padrão será B<COPROC>.  I<NOME> não precisa ser fornecido se "
+"I<comando> for um I<comando simples> (veja-se acima); caso contrário, ele "
+"será interpretado como a primeira palavra do comando simples.  Quando o "
+"coprocesso for executado, o shell criará uma variável de matriz (veja-se "
+"B<Matrizes> abaixo) chamada I<NOME> no contexto do shell em execução.  A "
+"saída padrão de I<comando> será conectada por meio de um tubo a um "
+"descritor de arquivo no shell em execução, e esse descritor de arquivo "
+"será atribuído para I<NOME>[0].  A entrada padrão de I<comando> será "
+"conectada por meio de um tubo a um descritor de arquivo no shell em "
+"execução, e esse descritor de arquivo será atribuído para I<NOME>[1].  "
+"Esse tubo será estabelecido antes de quaisquer redireções especificadas "
+"pelo comando (veja-se E<.SM> B<REDIREÇÃO> abaixo).  Os descritores de "
+"arquivo podem ser utilizados como argumentos para comandos de shell e "
+"redireções usando-se expansões padrão de palavras.  Os descritores de "
+"arquivo não estarão disponíveis em subshells.  O ID de processo do shell "
+"gerado para executar o coprocesso estará disponível como o valor da "
+"variável I<NOME>_PID.  O comando interno B<wait> pode ser usado para "
+"aguardar o coprocesso terminar."
 
 #. type: Plain text
 #: man/bash.1:961
@@ -1591,12 +1615,15 @@ msgid ""
 "command always returns success.  The return status of a coprocess is the "
 "exit status of I<command>."
 msgstr ""
+"Como o coprocesso será criado como um comando assíncrono, o comando "
+"B<coproc> sempre retornará sucesso.  A situação de retorno de um "
+"coprocesso será a situação de saída de I<comando>."
 
 #. type: SS
 #: man/bash.1:961
 #, no-wrap
 msgid "Shell Function Definitions"
-msgstr ""
+msgstr "Definições de Funções de Shell"
 
 #. type: Plain text
 #: man/bash.1:966
@@ -1605,18 +1632,21 @@ msgid ""
 "executes a compound command with a new set of positional parameters.  Shell "
 "functions are declared as follows:"
 msgstr ""
+"Uma função de shell é um objeto que é chamado como um comando simples e "
+"executa um comando composto com um novo conjunto de parâmetros "
+"posicionais.  Funções de shell são declaradas conforme segue:"
 
 #. type: TP
 #: man/bash.1:966
 #, no-wrap
 msgid "I<name> () I<compound-command> [I<redirection>]"
-msgstr ""
+msgstr "I<nome> () I<comando-composto> [I<redireção>]"
 
 #. type: TP
 #: man/bash.1:969
 #, no-wrap
 msgid "B<function> I<name> [()] I<compound-command> [I<redirection>]"
-msgstr ""
+msgstr "B<function> I<nome> [()] I<comando-composto> [I<redireção>]"
 
 #. type: Plain text
 #: man/bash.1:996
@@ -1636,6 +1666,21 @@ msgid ""
 "of a function is the exit status of the last command executed in the body.  "
 "(See E<.SM> B<FUNCTIONS> below.)"
 msgstr ""
+"Isso define uma função chamada I<nome>.  A palavra reservada B<function> "
+"é opcional.  Se a palavra reservada B<function> for fornecida, os "
+"parênteses serão opcionais.  O I<corpo> da função é o comando composto "
+"I<comando-composto> (veja-se B<Comandos Compostos> acima).  Esse comando "
+"geralmente é uma I<lista> de comandos entre { e }, mas pode ser qualquer "
+"comando listado sob B<Comandos Compostos> acima.  I<comando-composto> será "
+"executado sempre que I<nome> for especificado como o nome de um comando "
+"simples.  Quando em I<modo posix>, I<nome> pode não ser o nome de um dos "
+"I<internos especiais> POSIX.  Quaisquer redireções (veja-se E<.SM> "
+"B<REDIREÇÃO> abaixo) especificadas quando uma função for definida serão "
+"executadas quando a função for executada.  A situação de saída de uma "
+"definição de função será zero, a menos que ocorra um erro de sintaxe ou "
+"uma função somente leitura com o mesmo nome já exista.  Quando executada, "
+"a situação de saída de uma função será a situação de saída do "
+"último comando executado no corpo.  (Veja-se E<.SM> B<FUNÇÕES> abaixo.)"
 
 #. type: SH
 #: man/bash.1:996
