@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: GNU Bash Manual Page 4.3\n"
 "Report-Msgid-Bugs-To: jafesp@gmail.com\n"
 "POT-Creation-Date: 2025-03-26 03:39-0300\n"
-"PO-Revision-Date: 2025-04-03 09:00-0300\n"
+"PO-Revision-Date: 2025-04-04 16:00-0300\n"
 "Last-Translator: Jamenson Ferreira Espindula de Almeida Melo "
 "<jafesp@gmail.com>\n"
 "Language-Team: none\n"
@@ -1391,7 +1391,7 @@ msgstr ""
 #: man/bash.1:822
 #, no-wrap
 msgid "B<select> I<name> [ B<in> I<word> ] ; B<do> I<list> ; B<done>"
-msgstr ""
+msgstr "B<select> I<nome> [ B<in> I<palavra> ] ; B<do> I<lista> ; B<done>"
 
 #. type: Plain text
 #: man/bash.1:854
@@ -1410,6 +1410,21 @@ msgid ""
 "exit status of the last command executed in I<list>, or zero if no commands "
 "were executed."
 msgstr ""
+"A lista de palavras seguindo B<in> será expandida, gerando uma lista de "
+"itens.  O conjunto de palavras expandidas será impresso no erro padrão, "
+"cada uma precedida por um número.  Se I<palavra> de B<in> for omitida, os "
+"parâmetros posicionais serão impressos (veja-se E<.SM> B<PARÂMETROS> "
+"abaixo).  O prompt E<.SM> B<PS3> será então exibido e uma linha lida a "
+"partir da entrada padrão.  Se a linha consistir de um número "
+"correspondente a uma das palavras exibidas, então o valor de I<nome> será "
+"configurado para essa palavra.  Se a linha estiver vazia, as palavras e o "
+"prompt serão exibidos novamente.  Se EOF for lido, o comando completará.  "
+"Qualquer outro valor lido faz com que I<nome> seja configurado para nulo.  A "
+"linha lida será salva na variável E<.SM> B<REPLY>.  A I<lista> será "
+"executada depois de cada seleção até que um comando B<break> seja "
+"executado.  A situação de saída de B<select> é a situação de saída do "
+"último comando executado em I<lista>, ou zero se nenhum comando foi "
+"executado."
 
 #. type: TP
 #: man/bash.1:854
@@ -1418,6 +1433,8 @@ msgid ""
 "B<case> I<word> B<in> [ [(] I<pattern> [ B<|> I<pattern> ] ... ) I<list> ;; "
 "] ... B<esac>"
 msgstr ""
+"B<case> I<palavra> B<in> [ [(] I<padrão> [ B<|> I<padrão> ] ... ) I<lista> "
+";; ] ... B<esac>"
 
 #. type: Plain text
 #: man/bash.1:883
@@ -1440,6 +1457,26 @@ msgid ""
 "match.  The exit status is zero if no pattern matches.  Otherwise, it is the "
 "exit status of the last command executed in I<list>."
 msgstr ""
+"Um comando B<case> primeiro expande I<palavra> e tenta correspondê-lo "
+"contra cada I<padrão> em sequência, usando as mesmas regras de "
+"correspondência da expansão de nome de caminho (veja-se B<Expansão de "
+"Nome de Caminho> abaixo).  A I<palavra> será expandida usando expansão de "
+"til, expansão de parâmetro e de variável, substituição aritmética, "
+"substituição de comando, substituição de processo e remoção de aspas.  "
+"Cada I<padrão> examinado será expandido usando expansão de til, expansão "
+"de parâmetro e de variável, substituição aritmética, substituição de "
+"comando e substituição de processo.  Se a opção de shell B<nocasematch> "
+"estiver habilitada, a correspondência será realizada sem considerar a "
+"espécie dos caracteres alfabéticos.  Quando uma correspondência for "
+"encontrada, a I<lista> correspondente será executada.  Se o operador B<;;> "
+"for usado, nenhuma correspondência subsequente será tentada depois da "
+"primeira correspondência de padrão.  Usar B<;&> no lugar de B<;;> faz com "
+"que a execução continue com a I<lista> associada com o próximo conjunto "
+"de padrões.  Usar B<;;&> no lugar de B<;;> faz com que o shell teste a "
+"próxima lista de padrões na declaração, se existir, e execute qualquer "
+"I<lista> associada em uma correspondência bem-sucedida.  A situação de "
+"saída será zero se nenhum padrão corresponder.  Caso contrário, é a "
+"situação de saída do último comando executado em I<lista>."
 
 #. type: TP
 #: man/bash.1:883
@@ -1448,6 +1485,8 @@ msgid ""
 "B<if> I<list>; B<then> I<list>; [ B<elif> I<list>; B<then> I<list>; ] ... [ "
 "B<else> I<list>; ] B<fi>"
 msgstr ""
+"B<if> I<lista>; B<then> I<lista>; [ B<elif> I<lista>; B<then> I<lista>; ] "
+"... [ B<else> I<lista>; ] B<fi>"
 
 #. type: Plain text
 #: man/bash.1:897
@@ -1459,18 +1498,25 @@ msgid ""
 "executed, if present.  The exit status is the exit status of the last "
 "command executed, or zero if no condition tested true."
 msgstr ""
+"A I<lista> de B<if> será executada.  Se a situação de saída dele for "
+"zero, a I<lista> de B<then> será executada.  Caso contrário, cada I<lista> "
+"de B<elif> será executada em sequência, e se a situação de saída dele "
+"for zero, a I<lista> correspondente de B<then> será executada e o comando "
+"completará.  Caso contrário, a I<lista> de B<else> será executada, se "
+"presente.  A situação de saída é a situação de saída do último "
+"comando executado, ou zero se nenhuma condição testou verdadeira."
 
 #. type: TP
 #: man/bash.1:897
 #, no-wrap
 msgid "B<while> I<list-1>; B<do> I<list-2>; B<done>"
-msgstr ""
+msgstr "B<while> I<lista-1>; B<do> I<lista-2>; B<done>"
 
 #. type: TP
 #: man/bash.1:900
 #, no-wrap
 msgid "B<until> I<list-1>; B<do> I<list-2>; B<done>"
-msgstr ""
+msgstr "B<until> I<lista-1>; B<do> I<lista-2>; B<done>"
 
 #. type: Plain text
 #: man/bash.1:915
@@ -1483,6 +1529,14 @@ msgid ""
 "B<until> commands is the exit status of the last command executed in "
 "I<list-2>, or zero if none was executed."
 msgstr ""
+"O comando B<while> executa continuamente a lista I<lista-2> enquanto o "
+"último comando na lista I<lista-1> retornar uma situação de saída de "
+"zero.  O comando B<until> é idêntico ao comando B<while>, exceto que o "
+"teste será negado; I<lista-2> será executada enquanto o último comando em "
+"I<lista-1> retornar uma situação de saída diferente de zero.  A "
+"situação de saída dos comandos B<while> e B<until> será a situação de "
+"saída do último comando executado em I<lista-2>, ou zero se nenhum foi "
+"executado."
 
 #. type: SS
 #: man/bash.1:915
