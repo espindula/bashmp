@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: GNU Bash Manual Page 4.3\n"
 "Report-Msgid-Bugs-To: jafesp@gmail.com\n"
 "POT-Creation-Date: 2025-03-26 03:39-0300\n"
-"PO-Revision-Date: 2025-04-04 17:00-0300\n"
+"PO-Revision-Date: 2025-04-07 22:30-0300\n"
 "Last-Translator: Jamenson Ferreira Espindula de Almeida Melo "
 "<jafesp@gmail.com>\n"
 "Language-Team: none\n"
@@ -1686,7 +1686,7 @@ msgstr ""
 #: man/bash.1:996
 #, no-wrap
 msgid "COMMENTS"
-msgstr ""
+msgstr "COMENTÁRIOS"
 
 #. type: Plain text
 #: man/bash.1:1012
@@ -1699,12 +1699,19 @@ msgid ""
 "not allow comments.  The B<interactive_comments> option is on by default in "
 "interactive shells."
 msgstr ""
+"Em um shell não interativo, ou um shell interativo no qual a opção "
+"B<interactive_comments> para o interno B<shopt> esteja habilitada (veja-se "
+"E<.SM> B<COMANDOS INTERNOS DO SHELL> abaixo), uma palavra que começe com "
+"B<#> faz com que essa palavra e todos os caracteres restantes nessa linha "
+"sejam ignorados.  Um shell interativo sem a opção B<interactive_comments> "
+"habilitada não permite comentários.  A opção B<interactive_comments> "
+"está ligada por padrão em shells interativos."
 
 #. type: SH
 #: man/bash.1:1012
 #, no-wrap
 msgid "QUOTING"
-msgstr ""
+msgstr "ASPEAMENTO"
 
 #. type: Plain text
 #: man/bash.1:1018
@@ -1714,6 +1721,11 @@ msgid ""
 "special characters, to prevent reserved words from being recognized as such, "
 "and to prevent parameter expansion."
 msgstr ""
+"I<Aspeamento> é usado para remover o significado especial de certos "
+"caracteres ou palavras para o shell.  Aspeamento pode ser usado para "
+"desabilitar tratamento especial para caracteres especiais, para evitar que "
+"palavras reservadas sejam reconhecidas como tal e para evitar expansão de "
+"parâmetros."
 
 #. type: Plain text
 #: man/bash.1:1024
@@ -1721,6 +1733,9 @@ msgid ""
 "Each of the I<metacharacters> listed above under E<.SM> B<DEFINITIONS> has "
 "special meaning to the shell and must be quoted if it is to represent itself."
 msgstr ""
+"Cada um dos I<metacaracteres> listados acima sob E<.SM> B<DEFINIÇÕES> tem "
+"significado especial para o shell e precisam estar aspeados se forem para "
+"representarem a si mesmos."
 
 #. type: Plain text
 #: man/bash.1:1032
@@ -1729,6 +1744,10 @@ msgid ""
 "B<HISTORY EXPANSION> below), the I<history expansion> character, usually "
 "B<!>, must be quoted to prevent history expansion."
 msgstr ""
+"Quando os recursos de expansão do histórico de comandos estiverem sendo "
+"usados ​​(veja-se E<.SM> B<EXPANSÃO DE HISTÓRICO> abaixo), o caractere "
+"I<expansão de histórico>, geralmente B<!>, precisa ser aspeado para evitar "
+"a expansão do histórico."
 
 #. type: Plain text
 #: man/bash.1:1036
@@ -1736,6 +1755,8 @@ msgid ""
 "There are three quoting mechanisms: the I<escape character>, single quotes, "
 "and double quotes."
 msgstr ""
+"Existem três mecanismos de aspeamento: I<caractere de escape>, aspas "
+"simples e aspas duplas."
 
 #. type: Plain text
 #: man/bash.1:1044
@@ -1747,6 +1768,12 @@ msgid ""
 "line continuation (that is, it is removed from the input stream and "
 "effectively ignored)."
 msgstr ""
+"Uma barra invertida sem aspas (B<\\e>) é o I<caractere de escape>.  Ela "
+"preserva o valor literal do próximo caractere que se segue, com exceção "
+"de E<lt>novalinhaE<gt>.  Se um par B<\\e>E<lt>novalinhaE<gt> aparecer, e a "
+"própria barra invertida não estiver entre aspas, o "
+"B<\\e>E<lt>novalinhaE<gt> será tratado como uma continuação de linha (ou "
+"seja, será removido do fluxo de entrada e efetivamente ignorado)."
 
 #. type: Plain text
 #: man/bash.1:1048
@@ -1755,6 +1782,9 @@ msgid ""
 "character within the quotes.  A single quote may not occur between single "
 "quotes, even when preceded by a backslash."
 msgstr ""
+"Incluir caracteres entre aspas simples preserva o valor literal de cada "
+"caractere dentro das aspas.  Uma aspa simples não pode ocorrer entre aspas "
+"simples, mesmo quando precedida por uma barra invertida."
 
 #. type: Plain text
 #: man/bash.1:1077
@@ -1770,6 +1800,17 @@ msgid ""
 "appearing in double quotes is escaped using a backslash.  The backslash "
 "preceding the B<!> is not removed."
 msgstr ""
+"Incluir caracteres entre aspas duplas preserva o valor literal de todos os "
+"caracteres dentro das aspas, com exceção de B<$>, B<\\`>, B<\\e> e, quando "
+"a expansão de histórico estiver habilitada, B<!>.  Os caracteres B<$> e "
+"B<\\`> retém o significado especial deles dentro das aspas duplas.  A barra "
+"invertida retém o significado especial dela somente quando seguida por um "
+"dos seguintes caracteres: B<$>, B<\\`>, \\^B<\">\\^, B<\\e> ou "
+"B<E<lt>novalinhaE<gt>>.  Uma aspa dupla pode ser colocada entre aspas duplas "
+"precedendo-a com uma barra invertida.  Se habilitada, a expansão de "
+"histórico será realizada, a menos que um B<!> que apareça entre aspas "
+"duplas seja escapado usando uma barra invertida.  A barra invertida que "
+"precede o B<!> não é removida."
 
 #. type: Plain text
 #: man/bash.1:1087
@@ -1777,6 +1818,8 @@ msgid ""
 "The special parameters B<*> and B<@> have special meaning when in double "
 "quotes (see E<.SM> B<PARAMETERS> below)."
 msgstr ""
+"Os parâmetros especiais B<*> e B<@> tem um significado especial quando em "
+"aspas duplas (veja-se E<.SM> B<PARÂMETROS> abaixo)."
 
 #. type: Plain text
 #: man/bash.1:1092
@@ -1786,139 +1829,144 @@ msgid ""
 "specified by the ANSI C standard.  Backslash escape sequences, if present, "
 "are decoded as follows:"
 msgstr ""
+"Palavras da forma B<$>\\(aqI<sequência de caracteres>\\(aq são tratadas "
+"especialmente.  A palavra expande para I<sequência de caracteres>, com "
+"caracteres de escape de barra invertida substituídos conforme especificado "
+"pelo padrão ANSI C.  Sequências de escape de barra invertida, se "
+"presentes, são decodificadas conforme segue:"
 
 #. type: TP
 #: man/bash.1:1094 man/bash.1:4883 man/bash.1:5215 man/bash.1:7630
 #, no-wrap
 msgid "B<\\ea>"
-msgstr ""
+msgstr "B<\\ea>"
 
 #. type: Plain text
 #: man/bash.1:1097 man/bash.1:5218 man/bash.1:7633
 msgid "alert (bell)"
-msgstr ""
+msgstr "alerta (sino)"
 
 #. type: TP
 #: man/bash.1:1097 man/bash.1:5218 man/bash.1:7633
 #, no-wrap
 msgid "B<\\eb>"
-msgstr ""
+msgstr "B<\\eb>"
 
 #. type: Plain text
 #: man/bash.1:1100 man/bash.1:5221 man/bash.1:7636
 msgid "backspace"
-msgstr ""
+msgstr "backspace"
 
 #. type: TP
 #: man/bash.1:1100 man/bash.1:4894 man/bash.1:5196 man/bash.1:7639
 #, no-wrap
 msgid "B<\\ee>"
-msgstr ""
+msgstr "B<\\ee>"
 
 #. type: TP
 #: man/bash.1:1102 man/bash.1:7641
 #, no-wrap
 msgid "B<\\eE>"
-msgstr ""
+msgstr "B<\\eE>"
 
 #. type: Plain text
 #: man/bash.1:1105 man/bash.1:5199 man/bash.1:7644
 msgid "an escape character"
-msgstr ""
+msgstr "um caractere de escape"
 
 #. type: TP
 #: man/bash.1:1105 man/bash.1:5224 man/bash.1:7644
 #, no-wrap
 msgid "B<\\ef>"
-msgstr ""
+msgstr "B<\\ef>"
 
 #. type: Plain text
 #: man/bash.1:1108 man/bash.1:5227 man/bash.1:7647
 msgid "form feed"
-msgstr ""
+msgstr "alimentação de formulário"
 
 #. type: TP
 #: man/bash.1:1108 man/bash.1:4909 man/bash.1:5227 man/bash.1:7647
 #, no-wrap
 msgid "B<\\en>"
-msgstr ""
+msgstr "B<\\en>"
 
 #. type: Plain text
 #: man/bash.1:1111 man/bash.1:7650
 msgid "new line"
-msgstr ""
+msgstr "nova linha"
 
 #. type: TP
 #: man/bash.1:1111 man/bash.1:4912 man/bash.1:5230 man/bash.1:7650
 #, no-wrap
 msgid "B<\\er>"
-msgstr ""
+msgstr "B<\\er>"
 
 #. type: Plain text
 #: man/bash.1:1114 man/bash.1:4915 man/bash.1:5233 man/bash.1:7653
 msgid "carriage return"
-msgstr ""
+msgstr "retorno de carro"
 
 #. type: TP
 #: man/bash.1:1114 man/bash.1:4920 man/bash.1:5233 man/bash.1:7653
 #, no-wrap
 msgid "B<\\et>"
-msgstr ""
+msgstr "B<\\et>"
 
 #. type: Plain text
 #: man/bash.1:1117 man/bash.1:5236 man/bash.1:7656
 msgid "horizontal tab"
-msgstr ""
+msgstr "tabulação horizontal"
 
 #. type: TP
 #: man/bash.1:1117 man/bash.1:4935 man/bash.1:5236 man/bash.1:7656
 #, no-wrap
 msgid "B<\\ev>"
-msgstr ""
+msgstr "B<\\ev>"
 
 #. type: Plain text
 #: man/bash.1:1120 man/bash.1:5239 man/bash.1:7659
 msgid "vertical tab"
-msgstr ""
+msgstr "tabulação vertical"
 
 #. type: TP
 #: man/bash.1:1120 man/bash.1:4972 man/bash.1:5199 man/bash.1:7659
 #, no-wrap
 msgid "B<\\e\\e>"
-msgstr ""
+msgstr "B<\\e\\e>"
 
 #. type: Plain text
 #: man/bash.1:1123 man/bash.1:5202 man/bash.1:7662
 msgid "backslash"
-msgstr ""
+msgstr "barra invertida"
 
 #. type: TP
 #: man/bash.1:1123 man/bash.1:5205
 #, no-wrap
 msgid "B<\\e\\(aq>"
-msgstr ""
+msgstr "B<\\e\\(aq>"
 
 #. type: Plain text
 #: man/bash.1:1126
 msgid "single quote"
-msgstr ""
+msgstr "aspa simples"
 
 #. type: TP
 #: man/bash.1:1126 man/bash.1:5202
 #, no-wrap
 msgid "B<\\e\">"
-msgstr ""
+msgstr "B<\\e\">"
 
 #. type: Plain text
 #: man/bash.1:1129
 msgid "double quote"
-msgstr ""
+msgstr "aspa dupla"
 
 #. type: TP
 #: man/bash.1:1129 man/bash.1:4969 man/bash.1:5239
 #, no-wrap
 msgid "B<\\e>I<nnn>"
-msgstr ""
+msgstr "B<\\e>I<nnn>"
 
 #. type: Plain text
 #: man/bash.1:1133 man/bash.1:5243
@@ -1926,12 +1974,14 @@ msgid ""
 "the eight-bit character whose value is the octal value I<nnn> (one to three "
 "digits)"
 msgstr ""
+"o caractere de oito bits cujo valor é o valor octal I<nnn> (um a três "
+"dígitos)"
 
 #. type: TP
 #: man/bash.1:1133 man/bash.1:5243 man/bash.1:7666
 #, no-wrap
 msgid "B<\\ex>I<HH>"
-msgstr ""
+msgstr "B<\\ex>I<HH>"
 
 #. type: Plain text
 #: man/bash.1:1137 man/bash.1:5247 man/bash.1:7670
@@ -1939,12 +1989,14 @@ msgid ""
 "the eight-bit character whose value is the hexadecimal value I<HH> (one or "
 "two hex digits)"
 msgstr ""
+"o caractere de oito bits cujo valor é o valor hexadecimal I<HH> (um ou dois "
+"dígitos hexadecimais)"
 
 #. type: TP
 #: man/bash.1:1137 man/bash.1:7670
 #, no-wrap
 msgid "B<\\eu>I<HHHH>"
-msgstr ""
+msgstr "B<\\eu>I<HHHH>"
 
 #. type: Plain text
 #: man/bash.1:1141 man/bash.1:7674
@@ -1952,12 +2004,14 @@ msgid ""
 "the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value "
 "I<HHHH> (one to four hex digits)"
 msgstr ""
+"o caractere Unicode (ISO/IEC 10646) cujo valor é o valor hexadecimal "
+"I<HHHH> (um a quatro dígitos hexadecimais)"
 
 #. type: TP
 #: man/bash.1:1141 man/bash.1:7674
 #, no-wrap
 msgid "B<\\eU>I<HHHHHHHH>"
-msgstr ""
+msgstr "B<\\eU>I<HHHHHHHH>"
 
 #. type: Plain text
 #: man/bash.1:1145 man/bash.1:7678
@@ -1965,17 +2019,19 @@ msgid ""
 "the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value "
 "I<HHHHHHHH> (one to eight hex digits)"
 msgstr ""
+"o caractere Unicode (ISO/IEC 10646) cujo valor é o valor hexadecimal "
+"I<HHHHHHHH> (um a oito dígitos hexadecimais)"
 
 #. type: TP
 #: man/bash.1:1145
 #, no-wrap
 msgid "B<\\ec>I<x>"
-msgstr ""
+msgstr "B<\\ec>I<x>"
 
 #. type: Plain text
 #: man/bash.1:1148
 msgid "a control-I<x> character"
-msgstr ""
+msgstr "um caractere control-I<x>"
 
 #. type: Plain text
 #: man/bash.1:1153
@@ -1983,6 +2039,8 @@ msgid ""
 "The expanded result is single-quoted, as if the dollar sign had not been "
 "present."
 msgstr ""
+"O resultado expandido está entre aspas simples, como se o cifrão não "
+"estivesse presente."
 
 #. type: Plain text
 #: man/bash.1:1160
@@ -1992,12 +2050,17 @@ msgid ""
 "current locale is B<C> or B<POSIX>, the dollar sign is ignored.  If the "
 "string is translated and replaced, the replacement is double-quoted."
 msgstr ""
+"Uma sequência de caracteres entre aspas duplas precedida por um cifrão "
+"(B<$>\"I<sequência de caracteres>\") fará com que a sequência de "
+"caracteres seja traduzida de acordo com o local atual.  Se o local atual for "
+"B<C> ou B<POSIX>, o cifrão será ignorado.  Se a sequência de caracteres "
+"for traduzida e substituída, a substituição será entre aspas duplas."
 
 #. type: SH
 #: man/bash.1:1160
 #, no-wrap
 msgid "PARAMETERS"
-msgstr ""
+msgstr "PARÂMETROS"
 
 #. type: Plain text
 #: man/bash.1:1180
@@ -2009,6 +2072,12 @@ msgid ""
 "using the B<declare> builtin command (see B<declare> below in E<.SM> B<SHELL "
 "BUILTIN COMMANDS>)."
 msgstr ""
+"Um I<parâmetro> é uma entidade que armazena valores.  Pode ser um I<nome>, "
+"um número ou um dos caracteres especiais listados abaixo sob B<Parâmetros "
+"Especiais>.  Uma I<variável> é um parâmetro denotado por um I<nome>.  Uma "
+"variável tem um I<valor> e zero ou mais I<atributos>.  Atributos são "
+"atribuídos usando o comando interno B<declare> (veja-se B<declare> abaixo "
+"em E<.SM> B<COMANDOS INTERNOS DO SHELL>)."
 
 #. type: Plain text
 #: man/bash.1:1189
@@ -2017,16 +2086,20 @@ msgid ""
 "valid value.  Once a variable is set, it may be unset only by using the "
 "B<unset> builtin command (see E<.SM> B<SHELL BUILTIN COMMANDS> below)."
 msgstr ""
+"Um parâmetro é configurado se um valor tiver sido atribuído a ele.  A "
+"string nula é um valor válido.  Uma vez que uma variável esteja "
+"configurada, ela pode ser desconfigurada somente usando-se o comando interno "
+"B<unset> (veja-se E<.SM> B<COMANDOS INTERNOS DO SHELL> abaixo)."
 
 #. type: Plain text
 #: man/bash.1:1193
 msgid "A I<variable> may be assigned to by a statement of the form"
-msgstr ""
+msgstr "Uma I<variável> pode ser atribuída por uma declaração da forma"
 
 #. type: Plain text
 #: man/bash.1:1196
 msgid "I<name>=[I<value>]"
-msgstr ""
+msgstr "I<nome>=[I<valor>]"
 
 #. type: Plain text
 #: man/bash.1:1231
@@ -2045,6 +2118,21 @@ msgid ""
 "instances of the B<command> builtin and retain these assignment statement "
 "properties."
 msgstr ""
+"Se I<valor> não for fornecido, à variável será atribuída a sequência "
+"de caracteres nula.  Todos os I<valores> passam por expansão de til, "
+"expansão de parâmetro e de variável, substituição de comando, expansão "
+"aritmética e remoção de aspas (veja-se E<.SM> B<EXPANSÃO> abaixo).  Se a "
+"variável tiver o atributo B<integer> dela configurado, então I<valor> "
+"será avaliado como uma expressão aritmética mesmo se a expansão $((...)) "
+"não for usada (veja-se B<Expansão Aritmética> abaixo).  A divisão de "
+"palavras não é realizada, com exceção de B<\"$@\"> conforme explicado "
+"abaixo sob B<Parâmetros Especiais>.  A expansão de nome de caminho não é "
+"realizada.  As declarações de atribuição também podem aparecer como "
+"argumentos para os comandos internos B<alias>, B<declare>, B<typeset>, "
+"B<export>, B<readonly> e B<local>.  Quando em I<modo posix>, esses comandos "
+"internos podem aparecer em um comando depois de uma ou mais instâncias do "
+"comando interno B<command> e reter essas propriedades de declaração de "
+"atribuição."
 
 #. type: Plain text
 #: man/bash.1:1247
